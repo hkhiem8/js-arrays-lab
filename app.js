@@ -6,7 +6,7 @@ Exercise 1: Define an empty array
 Exercise 1 has been completed for you:
 */
 
-const foods = [];  
+const foods = [];
 
 console.log('Exercise 1 result:', foods);
 
@@ -20,9 +20,13 @@ Note: 'pizza' should be the first item in the array, followed by 'cheeseburger'.
 Complete Exercise 2 in the space below:
 */
 
-foods.push("pizza", "cheeseburger")
+foods.push("pizza")
+foods.push("cheeseburger")
 
 console.log('Exercise 2 result:', foods);
+
+//seperated the push functions
+// prev foods.push("pizza", "cheeseburger")
 
 /*
 Exercise 3: Insert at the beginning
@@ -59,7 +63,7 @@ Exercise 5: Insert an element between two others
 Complete Exercise 5 in the space below:
 */
 
-foods.splice(1, 0, "tofu")
+foods.splice(2, 0, "tofu")
 
 console.log('Exercise 5 result:', foods);
 
@@ -71,9 +75,15 @@ Exercise 6: Replace elements
 Complete Exercise 6 in the space below:
 */
 
-foods.splice(2, 1, "sushi", "cupcake")
+foods.splice(1, 1, "sushi")
+
+foods.splice(2, 0, "cupcake")
 
 console.log('Exercise 6 result:', foods);
+
+//seperated the splice functions
+// sushi splice replaces pizza
+// cupcake splice adds cupcake in the array after index 2 without removing an object
 
 /*
 Exercise 7: Using the `slice()` method
@@ -86,7 +96,9 @@ Exercise 7: Using the `slice()` method
 Complete Exercise 7 in the space below:
 */
 
-const yummy = foods.slice(2)
+const yummy = foods.slice(1, 3)
+
+// updated slide() to take index 1 (sushi) and index 3 (cupcake) from the foods array
 
 console.log('Exercise 7 result:', yummy);
 
@@ -154,9 +166,9 @@ const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
 
 nums.forEach(oddNums => {
-    if (oddNums % 2 !== 0) {
-        odds.push(oddNums);
-    }
+   if (oddNums % 2 !== 0) {
+      odds.push(oddNums);
+   }
 });
 
 console.log('Exercise 11 result:', odds);
@@ -184,14 +196,16 @@ const buzz = []
 const fizzbuzz = []
 
 nums.forEach(checkNums => {
-    if (checkNums % 3 == 0) {
-        fizz.push(checkNums);
-        } if (checkNums % 5 == 0) {
-            buzz.push(checkNums);
-            } if (checkNums % 3 && checkNums % 5) {
-                fizzbuzz.push(checkNums);
-                }
+   if (checkNums % 3 == 0) {
+      fizz.push(checkNums);
+   } if (checkNums % 5 == 0) {
+      buzz.push(checkNums);
+   } if (checkNums % 3 == 0 && checkNums % 5 == 0) {
+      fizzbuzz.push(checkNums);
+   }
 });
+
+// added comparison operator to last conditional.
 
 
 console.log('Exercise 12 Results:');
@@ -212,10 +226,10 @@ Complete Exercise 13 in the space below:
 */
 
 const numArrays = [
-	[100, 5, 23],
-	[15, 21, 72, 9],
-	[45, 66],
-	[7, 81, 90]
+   [100, 5, 23],
+   [15, 21, 72, 9],
+   [45, 66],
+   [7, 81, 90]
 ];
 
 const numList = numArrays[3]
@@ -253,9 +267,9 @@ Complete Exercise 15 in the space below:
 let total = 0
 
 numArrays.forEach((arr) => {
-    arr.forEach((num) => {
-        total += num;
-    })
+   arr.forEach((num) => {
+      total += num;
+   })
 })
 
 //can also use flat method to convert 2D array to 1D
